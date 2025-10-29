@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+  <h2>User Registration</h2>
+  <form id="regForm" onsubmit="return registerUser()">
+    <label for="name">Name:</label>
+    <input id="name" type="text" required><br><br>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" required><br><br>
+
+    <label for="password">Password:</label>
+    <input id="password" type="password" required><br><br>
+
+    <button id="registerBtn" type="submit">Register</button>
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    function registerUser() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+
+      if (name && email && password) {
+        document.getElementById("message").innerText = "Registration successful!";
+        return false; // prevent form reload
+      } else {
+        document.getElementById("message").innerText = "Please fill all fields!";
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
